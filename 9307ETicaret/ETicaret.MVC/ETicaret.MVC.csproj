@@ -117,7 +117,80 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\ETicaret.MVC.dll" />
+    <Content Include="bin\ETicaret.MVC.pdb" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.xml" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.xml" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.Web.xml" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.xml" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.xml" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.xml" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\blank-page.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\bootstrap-elements.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\bootstrap-grid.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\charts.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap-rtl.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap-rtl.min.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\bootstrap.min.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\plugins\morris.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\sb-admin-rtl.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\css\sb-admin.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\forms.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\index-rtl.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\index.html" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\bootstrap.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\bootstrap.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\jquery.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\flot-data.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\morris-data.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\morris.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\morris.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\raphael.min.js" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\tables.html" />
     <Content Include="Global.asax" />
+    <Content Include="obj\Debug\ETicaret.MVC.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ETicaret.MVC.dll" />
+    <Content Include="obj\Debug\ETicaret.MVC.pdb" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +198,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +209,49 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\core.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\icons.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\larger.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\list.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\mixins.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\path.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\spinning.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\stacked.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\less\variables.less" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_core.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_list.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_path.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\LICENSE" />
+    <Content Include="Content\startbootstrap-sb-admin-gh-pages\README.md" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\ETicaret.MVC.dll.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ETicaret.MVC.csprojResolveAssemblyReference.cache" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -144,6 +263,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
