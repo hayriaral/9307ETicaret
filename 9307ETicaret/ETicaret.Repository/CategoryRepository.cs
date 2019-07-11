@@ -9,7 +9,7 @@ using ETicaret.Common;
 namespace ETicaret.Repository
 {
     //uniqueidentifier karşılığı burda Guiddir.
-    class CategoryRepository : DataRepository<Category, Guid>
+    public class CategoryRepository : DataRepository<Category, Guid>
         //DataRepository ctrl . ile abstracları aktarıyoruz.
     {
         static ECommerceEntities db = Tool.GetConnection();
@@ -31,6 +31,7 @@ namespace ETicaret.Repository
         public override Result<int> Insert(Category item)
         {
             Category newCat = db.Categories.Create();
+            newCat.CategoryID = Guid.NewGuid();
             newCat.CategoryName = item.CategoryName;
             newCat.CreatedDate = DateTime.Now;
             newCat.Description = item.Description;
