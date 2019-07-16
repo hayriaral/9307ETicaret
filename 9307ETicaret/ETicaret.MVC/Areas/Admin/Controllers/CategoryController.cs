@@ -21,9 +21,10 @@ namespace ETicaret.MVC.Areas.Admin.Controllers
         InstanceResult<Category> result = new InstanceResult<Category>();
         
         // GET: Admin/Category
-        public ActionResult List()
+        public ActionResult List(string mesaj)
         {
             result.ResultList = cr.List();
+            ViewBag.silmeMesajı = mesaj;
             return View(result.ResultList.ProcessResult);
         }
 
@@ -33,11 +34,34 @@ namespace ETicaret.MVC.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult AddCategory(Category model)
         {
             result.ResultInt = cr.Insert(model);
             ViewBag.basarili = result.ResultInt.UserMessage;
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditCategory(Guid id)
+        {
+            result.ResultT = cr.GetObjByID(id);
+            return View(result.ResultT.ProcessResult);
+        }
+
+        [HttpPost]
+        public ActionResult EditCategory(Category model)
+        {
+            result.ResultInt = cr.Update(model);
+            ViewBag.mesaj = result.ResultInt.UserMessage;
+            return View(model);
+        }
+
+        public ActionResult DeleteCategory(Guid id)
+        {
+            result.ResultInt = cr.Delete(id);
+            return RedirectToAction("List", new { @mesaj = result.ResultInt.UserMessage });
+            //parametrenin gidebilmesi için yukarıdaki List methoduan parametre ekledik.
         }
     }
 }
