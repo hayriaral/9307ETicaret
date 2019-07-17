@@ -206,6 +206,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Models\ResultModel\InstanceResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -272,6 +273,7 @@
     <Content Include="Areas\Admin\Views\Brand\BrandList.cshtml" />
     <Content Include="Areas\Admin\Views\Brand\AddBrand.cshtml" />
     <Content Include="Areas\Admin\Views\Brand\EditBrand.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\ProductList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
