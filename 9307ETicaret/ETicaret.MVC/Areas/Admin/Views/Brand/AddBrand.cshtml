@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AddBrand";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Brand</h2>
+<div class="text-danger">
+    @ViewBag.hataMesaji
+</div>
+<form action="~/Admin/Brand/AddBrand" method="post" enctype="multipart/form-data">
+    @* Dosya işlemlerini gerçekleştirebilmek için enctype attiributeunu tanımlamamız lazım. *@
+    <div class="form-group" style="width:300px">
+        <label>Brand Name</label>
+        <input type="text" name="BrandName" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Brand Description</label>
+        <input type="text" name="Description" class="form-control" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Brand Photo</label>
+        <input type="file" name="file" />
+    </div>
+    <button class="btn btn-primary" type="submit">Add Brand</button>
+</form>

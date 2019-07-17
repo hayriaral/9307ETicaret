@@ -1,0 +1,39 @@
+﻿@using ETicaret.Entity
+@model List<Brand>
+@{
+    ViewBag.Title = "BrandList";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BrandList</h2>
+<div class="text-danger">
+    @ViewBag.deleteMessage
+</div>
+
+<table border="1" class="table table-hover">
+    <thead>
+        <tr>
+            <th>Brand Name</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Edit&Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Brand item in Model)
+        {
+            <tr>
+                <td>@item.BrandName</td>
+                <td>@item.Description</td>
+                <td>
+                    <img src="~/Images/@item.Photo" class="img-circle" width="75" height="75" />
+                </td>
+                <td>
+                    <a href="~/Admin/Brand/EditBrand/@item.BrandID">Edit</a>
+                    <a href="~/Admin/Brand/DeleteBrand/@item.BrandID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
