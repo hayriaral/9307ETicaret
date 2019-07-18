@@ -1,0 +1,63 @@
+﻿@using ETicaret.Entity
+@using ETicaret.MVC.Areas.Admin.Models.ProductVM
+@model ProductViewModel
+
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditProduct</h2>
+
+<form action="~/Admin/Product/EditProduct" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="ProductID" value="@Model.Product.ProductID" />
+    @* name="Product.ProductID" şeklinde de kulalnabiliriz. ancak sadece product classını etkileyen durum oldugundna gerek yoktur. ancak daha komplike örneğin birden fazla classı etkileyen işlem yapmak istediğimizde kullanımı bu şeiklde olmalıdır. *@
+    <input type="hidden" name="Photo" value="@Model.Product.Photo"/>
+
+    <div class="form-group" style="width:300px">
+        <label>Product Name</label>
+        <input type="text" name="ProductName" class="form-control" value="@Model.Product.ProductName" />
+    </div>
+    <div class="form-group" style="width:300px"  >
+        <label>Price</label>
+        <input type="text" name="Price" class="form-control" value="@Model.Product.Price"/>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Stock</label>
+        <input type="number" name="Stock" class="form-control" value="@Model.Product.Stock" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label> Category Name</label>
+        <select class="form-control" name="CategoryId">
+            <option value="@Model.Product.CategoryID"> @Model.Product.Category.CategoryName </option>
+            @foreach (Category item in Model.CatList)
+            {
+                <option value="@item.CategoryID"> @item.CategoryName </option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group" style="width:300px">
+        <label>Brand Name</label>
+        <select class="form-control" name="BrandId">
+            <option value="@Model.Product.BrandID"> @Model.Product.Brand.BrandName </option>
+            @foreach (Brand item in Model.BrandList)
+            {
+                <option value="@item.BrandID"> @item.BrandName </option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group" style="width:300px">
+        <label>Product Photo</label>
+        <img src="~/Images/@Model.Product.Photo" width="75" height="75" />
+        <input type="file" name="Photo" />
+        <div class="text-danger">
+            @TempData["PhotoExtensionError"]
+        </div>
+    </div>
+    <div class="form-group" style="width:300px">
+        <button class="btn btn-success" type="submit"> Add Product </button>
+    </div>
+</form>
