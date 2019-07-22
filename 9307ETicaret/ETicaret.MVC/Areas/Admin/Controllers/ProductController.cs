@@ -113,5 +113,11 @@ namespace ETicaret.MVC.Areas.Admin.Controllers
                 return RedirectToAction("EditProduct", new { @id = model.ProductID });
             }
         }
+
+        public ActionResult DeleteProduct(int id)
+        {
+            result.ResultInt = pr.Delete(id);
+            return RedirectToAction("ProductList");
+        }
     }
 }
