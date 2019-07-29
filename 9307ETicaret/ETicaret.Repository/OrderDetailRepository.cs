@@ -8,7 +8,7 @@ using ETicaret.Common;
 
 namespace ETicaret.Repository
 {
-    public class OrderDetailRepository : DataRepository<OrderDetail, int>, DeleteObjectByDoubleID<int>
+    public class OrderDetailRepository : DataRepository<OrderDetail, int>, DeleteObjectByDoubleID<int>, GetObjectByTwoID<OrderDetail>
         //buradaki int OrderID'yi temsil ediyor.
     {
         public static ECommerceEntities db = Tool.GetConnection();
@@ -34,19 +34,39 @@ namespace ETicaret.Repository
             throw new NotImplementedException();
         }
 
+        public Result<OrderDetail> GetObjectByTwoID(int id1, int id2)
+        {
+            //id1=orderid id2)productid
+            OrderDetail od = db.OrderDetails.SingleOrDefault(t => t.OrderID == id1 && t.ProductID == id2);
+            return result.GetT(od);
+        }
+
+
         public override Result<int> Insert(OrderDetail item)
         {
-            throw new NotImplementedException();
+            OrderDetail newOD = db.OrderDetails.Create();
+            newOD.ProductID = item.ProductID;
+            newOD.OrderID = item.OrderID;
+            newOD.Price = item.Price;
+            newOD.Quantitiy = item.Quantitiy;
+
+            db.OrderDetails.Add(newOD);
+            return result.GetResult(db);
         }
 
         public override Result<List<OrderDetail>> List()
         {
-            throw new NotImplementedException();
+            return result.GetListResult(db.OrderDetails.ToList());
         }
 
         public override Result<int> Update(OrderDetail item)
         {
-            throw new NotImplementedException();
+            OrderDetail od = GetObjectByTwoID(item.OrderID, item.ProductID).ProcessResult;
+
+            od.Price = item.Price;
+            od.Quantitiy = item.Quantitiy;
+
+            return result.GetResult(db);
         }
     }
 }
