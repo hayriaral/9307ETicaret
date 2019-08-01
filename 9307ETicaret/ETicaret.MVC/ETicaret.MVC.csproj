@@ -276,6 +276,9 @@
     <Content Include="Content\startbootstrap-sb-admin-gh-pages\js\plugins\morris\raphael.min.js" />
     <Content Include="Content\startbootstrap-sb-admin-gh-pages\tables.html" />
     <Content Include="Global.asax" />
+    <Content Include="MyScripts\color.css" />
+    <Content Include="MyScripts\ErrorMessages.js" />
+    <Content Include="MyScripts\main.js" />
     <Content Include="obj\Debug\ETicaret.MVC.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ETicaret.MVC.dll" />
     <Content Include="obj\Debug\ETicaret.MVC.pdb" />

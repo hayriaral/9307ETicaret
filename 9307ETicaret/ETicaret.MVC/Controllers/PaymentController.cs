@@ -50,7 +50,6 @@ namespace ETicaret.MVC.Controllers
                 //başka bir actiona yönlendirdiğimiz için viewbag ölür. tempdata kulalnıyoruz.
                 return RedirectToAction("Pay");
             }
-            return View();
         }
     }
 }
