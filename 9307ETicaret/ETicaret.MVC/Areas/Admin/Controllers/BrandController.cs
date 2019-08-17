@@ -90,6 +90,10 @@ namespace ETicaret.MVC.Areas.Admin.Controllers
 
         public ActionResult DeleteBrand(int id)
         {
+            string photoName = br.GetObjByID(id).ProcessResult.Photo;
+            string fullPath = Request.MapPath("~/Images/" + photoName);
+            System.IO.File.Delete(fullPath);
+            //Üstteki 3 adım product silinmeden hemen kayıtlı olduğu klasörden resmini de kaldırıyoruz.
             result.ResultInt = br.Delete(id);
             return RedirectToAction("BrandList", new { @mesaj = result.ResultInt.UserMessage });
         }
