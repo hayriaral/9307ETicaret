@@ -47,5 +47,25 @@ namespace ETicaret.MVC.Controllers
                 return RedirectToAction("SignUp", new { @mesajUye = "Bu maille kayıtlı başka bir kullanıcı bulunmaktadır" });
             }
         }
+        [HttpGet]
+        public ActionResult Login() {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(Member model, int RoleID) {
+            Member user = MemberRepository.db.Members.SingleOrDefault(t => t.Email == model.Email && t.Password == model.Password && t.RoleID==model.RoleID);
+            //Kullanıcı bilgileri kontrol ediliyor.
+            if (user != null && user.RoleID==1) {
+
+                return RedirectToAction("MemberList", "Member", new { area = "Admin" });
+            }
+            else if(user !=null && user.RoleID == 2) {
+                return RedirectToAction("Index", "Home");
+            }
+            else {
+                ViewBag.ErrorGiris = "Şifre, Email veya giriş tercihi hatalı.";
+            }
+            return View();
+        }
     }
 }

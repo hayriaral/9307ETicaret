@@ -426,6 +426,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Payment\Pay.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
