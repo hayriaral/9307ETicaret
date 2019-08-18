@@ -13,10 +13,11 @@ namespace ETicaret.MVC.Controllers
         // GET: Home
         ProductRepository pr = new ProductRepository();
 
-        public ActionResult Index(string paymentMesaj, string yeniUyeMesaj) //anasayfa
+        public ActionResult Index(string paymentMesaj, string yeniUyeMesaj, string cikisMesaj) //anasayfa
         {
             ViewBag.payment = paymentMesaj;
             ViewBag.yeniUye = yeniUyeMesaj;
+            ViewBag.cikisMesaj = cikisMesaj;
             return View(pr.GetLatestObjects(5).ProcessResult);
         }
 

@@ -66,5 +66,10 @@ namespace ETicaret.MVC.Controllers {
             }
             return View();
         }
+
+        public ActionResult Logout() {
+            Session["Member"] = null;
+            return RedirectToAction("Index", "Home", new { @cikisMesaj = "Oturum kapatıldı." });
+        }
     }
 }

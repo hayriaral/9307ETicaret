@@ -18,11 +18,14 @@ namespace ETicaret.MVC.Controllers
             //Bu method ürünlerin altındaki alışveriş arabası butonu ile tetiklenecek.
         {
             //Sepet oluşturacağız, sepeti de session üzerinde tutacağız. Order için yaratacağımız session Session["Order"] diye çağıracağız.
-            if (Session["Order"]==null)
-                //Sepet oluşturulmamışsa
+            if (Session["Order"] == null)
+            //Sepet oluşturulmamışsa
             {
                 Order newOrder = new Order();
                 newOrder.isPay = false;
+                if (Session["Member"]!=null) {
+                    newOrder.MemberID = ((Member)Session["Member"]).UserID;
+                }
                 or.Insert(newOrder);
 
                 Order dbdeki = or.GetLatestObjects(1).ProcessResult.SingleOrDefault();
