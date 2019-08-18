@@ -40,7 +40,7 @@ namespace ETicaret.MVC.Controllers
             {
                 Order sepetteki = (Order)Session["Order"];
                 OrderDetail sepettekiOrd = odr.GetObjectByTwoID(sepetteki.OrderID, id).ProcessResult;
-                //Daha önce sepete eklenmis bir ürün aynı sepete tekrar eklenmek istenirse, bu ürünün quantity'sini arttırmamız gerekiyor. O seneple bu üründen sepette mevcut mu diye bakmalıyız.
+                //Daha önce sepete eklenmis bir ürün aynı sepete tekrar eklenmek istenirse, bu ürünün quantity'sini arttırmamız gerekiyor. O sebeple bu üründen sepette mevcut mu diye bakmalıyız.
 
                 if (sepettekiOrd==null)
                     //demektir ki sepete yeni bir ürün ekleniyor.

@@ -7,16 +7,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ETicaret.MVC.Controllers
-{
-    public class UserController : Controller
-    {
+namespace ETicaret.MVC.Controllers {
+    public class UserController : Controller {
         MemberRepository mr = new MemberRepository();
         UserInstanceResult<Member> result = new UserInstanceResult<Member>();
         // GET: User
         [HttpGet]
-        public ActionResult SignUp(string mesajUye, string mesajPassword)
-        {
+        public ActionResult SignUp(string mesajUye, string mesajPassword) {
             ViewBag.mesajUye = mesajUye;
             ViewBag.mesajPassword = mesajPassword;
             return View();
@@ -33,7 +30,7 @@ namespace ETicaret.MVC.Controllers
                     result.ResultInt = mr.Insert(model); //dbye ekliyoruz.
 
                     if (result.ResultInt.IsSucceeded) {
-                        return RedirectToAction("Index","Home", new { @yeniUyeMesaj = "Üye olma işlemi başarılı!" });
+                        return RedirectToAction("Index", "Home", new { @yeniUyeMesaj = "Üye olma işlemi başarılı!" });
                     }
 
                     return RedirectToAction("SignUp");
@@ -53,13 +50,15 @@ namespace ETicaret.MVC.Controllers
         }
         [HttpPost]
         public ActionResult Login(Member model, int RoleID) {
-            Member user = MemberRepository.db.Members.SingleOrDefault(t => t.Email == model.Email && t.Password == model.Password && t.RoleID==model.RoleID);
+            Session["Member"] = null;
             //Kullanıcı bilgileri kontrol ediliyor.
-            if (user != null && user.RoleID==1) {
+            Member user = MemberRepository.db.Members.SingleOrDefault(t => t.Email == model.Email && t.Password == model.Password && t.RoleID == model.RoleID);
+            Session["Member"] = user;
 
+            if (user != null && user.RoleID == 1) {
                 return RedirectToAction("MemberList", "Member", new { area = "Admin" });
             }
-            else if(user !=null && user.RoleID == 2) {
+            else if (user != null && user.RoleID == 2) {
                 return RedirectToAction("Index", "Home");
             }
             else {

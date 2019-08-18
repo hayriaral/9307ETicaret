@@ -12,7 +12,6 @@
     <!--[if IE 6]>
     <link rel="stylesheet" type="text/css" href="iecss.css" />
     <![endif]-->
-
     @*<script type="text/javascript" src="js/boxOver.js"></script>*@
     <script src="~/Content/electronix/js/boxOver.js"></script>
 </head>
@@ -48,6 +47,7 @@
             </div>
             <!-- end of oferte_content-->
         </div>
+        @{Member currentUser = (Member)Session["Member"];}
         <div id="main_content">
             <div id="menu_tab">
                 <div class="left_menu_corner"></div>
@@ -57,23 +57,32 @@
                     <li><a href="~/Home/GetAllProducts" class="nav2">Products</a></li>
                     <li class="divider"></li>
                     <li><a href="#" class="nav3">Specials</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#" class="nav4">My account</a></li>
-                    <li class="divider"></li>
-                    <li><a href="~/User/SignUp" class="nav4">Sign Up</a></li>
-                    <li class="divider"></li>
-                    <li><a href="~/User/Login" class="nav4">Login</a></li>
-                    <li class="divider"></li>
+
+                    @if (currentUser != null) {
+                        <li class="divider"></li>
+                        <li><a href="#" class="nav4">My account</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="nav5">Sing Out</a></li>
+                        <li class="divider"></li>
+                        <li><a>Hoşgeldiniz @currentUser.Email</a></li>
+                    }
+                    @if (currentUser == null) {
+                        <li class="divider"></li>
+                        <li><a href="~/User/SignUp" class="nav4">Sign Up</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/User/Login" class="nav4">Login</a></li>
+                    }
+
                     @*
-                    <li><a href="contact.html" class="nav6">Contact Us</a></li>
-                    <li class="divider"></li>
-                    <li class="currencies">
-                        Currencies
-                        <select>
-                            <option>US Dollar</option>
-                            <option>Euro</option>
-                        </select>
-                    </li>*@
+        <li><a href="contact.html" class="nav6">Contact Us</a></li>
+        <li class="divider"></li>
+        <li class="currencies">
+            Currencies
+            <select>
+                <option>US Dollar</option>
+                <option>Euro</option>
+            </select>
+        </li>*@
                 </ul>
                 <div class="right_menu_corner"></div>
             </div>
@@ -94,18 +103,15 @@
                     <li class="even"><a href="#">Laptops &amp; Notebooks</a></li>
                     <li class="odd"><a href="#">Processors</a></li>
                     <li class="even"><a href="#">Motherboards</a></li>*@
-                    @{ 
+                    @{
                         CategoryRepository cr = new CategoryRepository();
                         int sayac = 0;
-                        foreach (Category item in cr.List().ProcessResult)
-                        {
-                            if (sayac%2==0)
-                            {
+                        foreach (Category item in cr.List().ProcessResult) {
+                            if (sayac % 2 == 0) {
                                 <li class="even"> <a href="~/Home/GetProductByCatID/@item.CategoryID"> @item.CategoryName </a> </li>
                                 sayac++;
                             }
-                            else
-                            {
+                            else {
                                 <li class="odd"> <a href="~/Home/GetProductByCatID/@item.CategoryID"> @item.CategoryName </a> </li>
                                 sayac++;
                             }
@@ -145,31 +151,30 @@
                 <div class="shopping_cart">
                     <div class="cart_title">Shopping cart</div>
                     <div class="cart_details">
-                        @{ 
-                            Order sepetim =(Order)(Session["Order"]);
+                        @{
+                            Order sepetim = (Order)(Session["Order"]);
                             int? adet = 0;
                             decimal? totalPrice = 0;
-                            if (sepetim != null)
-                            {
-                                foreach(OrderDetail item in sepetim.OrderDetails)
-                                {
+                            if (sepetim != null) {
+                                foreach (OrderDetail item in sepetim.OrderDetails) {
                                     adet += item.Quantitiy;
                                     totalPrice += item.Price;
                                 }
                             }
                         }
                         <label> @adet ürün </label>
-                       
-                         <br />
+
+                        <br />
                         <span class="border_cart"></span> Total: <span class="price">@totalPrice</span>
                     </div>
                     <div class="cart_icon">
                         <a href="~/Order/DetailPage" title="header=[Checkout] body=[&nbsp;] fade=[on]">
-                        <img src="~/Content/electronix/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a>
+                            <img src="~/Content/electronix/images/shoppingcart.png" alt="" width="48" height="48" border="0" />
+                        </a>
                     </div>
                 </div>
                 <div class="title_box">What’s new</div>
-                @{ 
+                @{
                     ProductRepository pr = new ProductRepository();
                     Product latestPro = pr.GetLatestObjects(1).ProcessResult.SingleOrDefault();
                 }
@@ -179,9 +184,11 @@
                     </div>
                     <div class="product_img">
                         <a href="~/Home/Detail/@latestPro.ProductID">
-                        <img src="~/Images//@latestPro.Photo" alt="" border="0" width="90" height="90" /></a>
+                            <img src="~/Images//@latestPro.Photo" alt="" border="0" width="90" height="90" />
+                        </a>
                     </div>
-                    <div class="prod_price"> <span class="@latestPro.Price</span>
+                    <div class="prod_price">
+                        <span class="@latestPro.Price</span>
                     </div>
                 </div>
                 <div class="title_box">Brands</div>
@@ -197,21 +204,18 @@
                     @{
                         BrandRepository br = new BrandRepository();
                         int sayac1 = 0;
-                        foreach (Brand item in br.List().ProcessResult)
-                        {
-                            if (sayac % 2 == 1)
-                            {
+                        foreach (Brand item in br.List().ProcessResult) {
+                            if (sayac % 2 == 1) {
                                 <li class="odd"> <a href="~/Home/GetProductByBrandID/@item.BrandID"> @item.BrandName </a> </li>
                                 sayac1++;
                             }
-                            else
-                            {
+                            else {
                                 <li class="even"> <a href="~/Home/GetProductByBrandID/@item.BrandID"> @item.BrandName </a> </li>
                                 sayac1++;
                             }
                         }
                     }
-                 </ul>
+                </ul>
                 @*<div class="banner_adds"> <a href="#"><img src="images/bann1.jpg" alt="" border="0" /></a> </div>*@
             </div>
             <!-- end of right content -->
