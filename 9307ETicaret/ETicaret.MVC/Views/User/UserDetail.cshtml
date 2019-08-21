@@ -1,0 +1,83 @@
+﻿@using ETicaret.Entity
+@model Member
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>My Account</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" margin-top:100px">
+        <h2>User Details</h2>
+
+        <div class="text-danger">
+            @ViewBag.hataMesaj
+        </div>
+
+        <form action="~/User/UserDetail" method="post">
+            <input type="hidden" name="UserID" value="@Model.UserID" />
+
+            <div class="form-group" style="width:300px">
+                <label>First Name</label>
+                <input type="text" name="FirstName" class="form-control" value="@Model.FirstName" />
+            </div>
+
+            <div class="form-group" style="width:300px">
+                <label>Last Name</label>
+                <input type="text" name="LastName" class="form-control" value="@Model.LastName" />
+            </div>
+
+            <div class="form-group" style="width:300px">
+                <label>Email</label>
+                <input type="text" name="Email" class="form-control" value="@Model.Email" readonly />
+            </div>
+
+            <div class="form-group" style="width:300px">
+                <label>Address</label>
+                <input type="text" name="Address" class="form-control" value="@Model.Address" />
+            </div>
+
+            <div class="form-group" style="width:300px">
+                <label>Password</label>
+                <input type="text" name="Password" class="form-control" value="@Model.Password" />
+            </div>
+
+            <button class="btn btn-primary" type="submit"> Kaydet </button>
+
+            <a class="btn btn-danger" href="~/User/DeleteUser">Hesabı Sil</a>
+        </form>
+
+        <h2>Past Shoppings</h2>
+        @*<table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Order Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (OrderDetail item in Model) {
+
+                        if (item.Order.isPay == true && (currentUser.UserID == item.Order.Member.UserID)) {
+                            <tr>
+                                <th>@item.Product.ProductName</th>
+                                <th>@item.Quantitiy</th>
+                                <th>@item.Price</th>
+                                <th>@item.Order.OrderDate</th>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>*@
+    </div>
+</body>
+</html>

@@ -71,5 +71,37 @@ namespace ETicaret.MVC.Controllers {
             Session["Member"] = null;
             return RedirectToAction("Index", "Home", new { @cikisMesaj = "Oturum kapatıldı." });
         }
+
+        [HttpGet]
+        public ActionResult UserDetail() {
+            Member currentUser = (Member)Session["Member"];
+            result.ResultT = mr.GetObjByID(currentUser.UserID);
+            return View(result.ResultT.ProcessResult);
+        }
+
+        [HttpPost]
+        public ActionResult UserDetail(Member model, string Password, string FirstName, string LastName, string Address) {
+
+            model.FirstName = FirstName;
+            model.LastName = LastName;
+            model.Address = Address;
+            model.Password = Password;
+            result.ResultInt = mr.Update(model);
+
+            if (result.ResultInt.IsSucceeded) {
+                //Session["Member"] = MemberRepository.db.Members.SingleOrDefault(t => t.Email == currentUser.Email);
+                return RedirectToAction("Index", "Home", new { @UyeBilgileriUpdate = "Üye bilgileri güncellendi." });
+            }
+
+            ViewBag.hataMesaj = "Bir hata oluştu.";
+            return RedirectToAction("UserDetail");
+        }
+
+        public ActionResult DeleteUser() {
+            Member currentUser = (Member)Session["Member"];
+            result.ResultInt = mr.Delete(currentUser.UserID);
+            Session["Member"] = null;
+            return RedirectToAction("Index", "Home", new { @deleteMesaj = "Kullanıcı silindi." });
+        }
     }
 }
