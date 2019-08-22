@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using ETicaret.Entity
+@model ICollection<OrderDetail>
+
+@*@{Member currentUser = (Member)Session["Member"];}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShoppingDetail</title>
+</head>
+<body>
+    <div class="container" style="margin-top:100px">
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (OrderDetail item in Model) {
+
+                    if (item.Order.isPay == true /*&& (currentUser.UserID == item.Order.Member.UserID)*/) {
+                        <tr>
+                            <th>@item.Product.ProductName</th>
+                            <th>@item.Quantitiy</th>
+                            <th>@item.Price</th>
+                            <th>@item.Order.OrderDate</th>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -13,10 +13,10 @@ namespace ETicaret.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ECommerceEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public ECommerceEntities()
-            : base("name=ECommerceEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     

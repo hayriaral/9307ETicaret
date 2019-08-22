@@ -64,13 +64,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\9307ETicaret\9307ETicaret\ETicaret.Entity\ETicaret.Entity.csproj">
+      <Project>{e2f30517-38e2-492e-86c9-113f7e05bdc2}</Project>
+      <Name>ETicaret.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ETicaret.Common\ETicaret.Common.csproj">
       <Project>{e3fbe3d0-694a-486f-b435-8c0e1c7665c0}</Project>
       <Name>ETicaret.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ETicaret.Entity\ETicaret.Entity.csproj">
-      <Project>{e2f30517-38e2-492e-86c9-113f7e05bdc2}</Project>
-      <Name>ETicaret.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

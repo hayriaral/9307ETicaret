@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaret.Common", "ETicaret.Common\ETicaret.Common.csproj", "{E3FBE3D0-694A-486F-B435-8C0E1C7665C0}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaret.Repository", "ETic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaret.MVC", "ETicaret.MVC\ETicaret.MVC.csproj", "{F9BA3D53-2A12-4177-978A-E314781F3EBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaret.Entity", "ETicaret.Entity\ETicaret.Entity.csproj", "{E2F30517-38E2-492E-86C9-113F7E05BDC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaret.Entity", "..\..\..\9307ETicaret\9307ETicaret\ETicaret.Entity\ETicaret.Entity.csproj", "{E2F30517-38E2-492E-86C9-113F7E05BDC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8162C2B6-308F-4C20-9D8B-D3FDE4E47E12}
 	EndGlobalSection
 EndGlobal

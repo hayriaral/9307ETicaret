@@ -34,15 +34,34 @@ namespace ETicaret.MVC.Areas.Admin.Controllers {
             return View(pwm);
         }
         [HttpPost]
-        public ActionResult AddProduct(Product model, HttpPostedFileBase Photo) {
+        public ActionResult AddProduct(Product model, HttpPostedFileBase Photo, HttpPostedFileBase Photo2, HttpPostedFileBase Photo3) {
             string PhotoName = "";
+            string PhotoName2 = "";
+            string PhotoName3 = "";
+
             if (Photo != null && Photo.ContentLength > 0) {
                 PhotoName = Guid.NewGuid().ToString().Replace("-", "") + ".jpg";
                 string path = Server.MapPath("~/Images/" + PhotoName);
                 Photo.SaveAs(path);
             }
+
+            if (Photo2 != null && Photo2.ContentLength > 0) {
+                PhotoName2 = Guid.NewGuid().ToString().Replace("-", "") + ".jpg";
+                string path = Server.MapPath("~/Images/" + PhotoName2);
+                Photo2.SaveAs(path);
+            }
+
+            if (Photo3 != null && Photo3.ContentLength > 0) {
+                PhotoName3 = Guid.NewGuid().ToString().Replace("-", "") + ".jpg";
+                string path = Server.MapPath("~/Images/" + PhotoName3);
+                Photo3.SaveAs(path);
+            }
+
             //Foto ekleme gibi tekrar eden işlemleri fonksiyın veya method haline getirmek için. MVC katmanında Admin altına açılacak "HELPER" isimli klasörde yeni bir class yaratarak gerekli işlemler için fonksiyonlar yaratılabilir.
             model.Photo = PhotoName;
+            model.Photo2 = PhotoName2;
+            model.Photo3 = PhotoName3;
+
             result.ResultInt = pr.Insert(model);
 
             if (result.ResultInt.IsSucceeded) {
@@ -65,8 +84,10 @@ namespace ETicaret.MVC.Areas.Admin.Controllers {
             return View(pwm);
         }
         [HttpPost]
-        public ActionResult EditProduct(Product model, HttpPostedFileBase Photo) {
+        public ActionResult EditProduct(Product model, HttpPostedFileBase Photo, HttpPostedFileBase Photo2, HttpPostedFileBase Photo3) {
             string PhotoName = model.Photo;
+            string PhotoName2 = model.Photo2;
+            string PhotoName3 = model.Photo3;
 
             if (Photo != null && Photo.ContentLength > 0) {
                 PhotoName = Guid.NewGuid().ToString().Replace("-", "") + ".jpg";
@@ -88,7 +109,22 @@ namespace ETicaret.MVC.Areas.Admin.Controllers {
                 Photo.SaveAs(path);
             }
 
+            if (Photo2 != null && Photo2.ContentLength > 0) {
+                PhotoName2 = Guid.NewGuid().ToString().Replace("-", "") + ".jpg";
+                string path = Server.MapPath("~/Images/" + PhotoName2);
+                Photo2.SaveAs(path);
+            }
+
+            if (Photo3 != null && Photo3.ContentLength > 0) {
+                PhotoName3 = Guid.NewGuid().ToString().Replace("-", "") + ".jpg";
+                string path = Server.MapPath("~/Images/" + PhotoName3);
+                Photo3.SaveAs(path);
+            }
+
             model.Photo = PhotoName;
+            model.Photo2 = PhotoName2;
+            model.Photo3 = PhotoName3;
+
             result.ResultInt = pr.Update(model);
             if (result.ResultInt.IsSucceeded) {
                 return RedirectToAction("ProductList");
@@ -99,9 +135,27 @@ namespace ETicaret.MVC.Areas.Admin.Controllers {
         }
         public ActionResult DeleteProduct(int id) {
             string photoName = pr.GetObjByID(id).ProcessResult.Photo;
-            string fullPath = Request.MapPath("~/Images/" + photoName);
-            System.IO.File.Delete(fullPath);
-            //Üstteki 3 adım product silinmeden hemen kayıtlı olduğu klasörden resmini de kaldırıyoruz.
+            string photoName2 = pr.GetObjByID(id).ProcessResult.Photo2;
+            string photoName3 = pr.GetObjByID(id).ProcessResult.Photo3;
+
+
+
+            if (photoName != null) {
+                string fullPath = Request.MapPath("~/Images/" + photoName);
+                System.IO.File.Delete(fullPath);
+            }
+
+            if (photoName2 != null) {
+                string fullPath2 = Request.MapPath("~/Images/" + photoName2);
+                System.IO.File.Delete(fullPath2);
+            }
+
+            if (photoName3 != null) {
+                string fullPath3 = Request.MapPath("~/Images/" + photoName3);
+                System.IO.File.Delete(fullPath3);
+            }
+
+            //Üstteki adımda product silinmeden hemen kayıtlı olduğu klasörden resmini de kaldırıyoruz.
             result.ResultInt = pr.Delete(id);
             return RedirectToAction("ProductList");
         }

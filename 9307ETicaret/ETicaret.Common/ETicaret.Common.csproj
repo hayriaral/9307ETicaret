@@ -55,14 +55,14 @@
     <Compile Include="Tool.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ETicaret.Entity\ETicaret.Entity.csproj">
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\9307ETicaret\9307ETicaret\ETicaret.Entity\ETicaret.Entity.csproj">
       <Project>{e2f30517-38e2-492e-86c9-113f7e05bdc2}</Project>
       <Name>ETicaret.Entity</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

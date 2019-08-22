@@ -27,6 +27,8 @@ namespace ETicaret.Entity
         public Nullable<int> BrandID { get; set; }
         public string Photo { get; set; }
         public Nullable<System.Guid> CategoryID { get; set; }
+        public string Photo2 { get; set; }
+        public string Photo3 { get; set; }
     
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }

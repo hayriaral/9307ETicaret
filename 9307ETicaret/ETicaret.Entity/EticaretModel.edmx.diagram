@@ -4,25 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2a7dc4c7e2d04390abe5b5bb86be7bda" Name="Diagram1">
-        <EntityTypeShape EntityType="ETicaretModel.Brand" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.Category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.Invoice" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.Member" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.Order" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.Payment" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ETicaretModel.UserRole" Width="1.5" PointX="1.5" PointY="12.625" IsExpanded="true" />
-        <AssociationConnector Association="ETicaretModel.FK_Product_Brand" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_Product_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_Invoice_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_Invoice_Payment" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_Member_UserRole" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_Order_Member" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_OrderDetail_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="ETicaretModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+      <Diagram DiagramId="e32b0c339be949a18366d349f52aef83" Name="Diagram1">
+        <EntityTypeShape EntityType="ECommerceEntities.Brand" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.Category" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.Invoice" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.Member" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.Order" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.OrderDetail" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.Payment" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECommerceEntities.UserRole" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <AssociationConnector Association="ECommerceEntities.FK_Product_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_Invoice_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_Invoice_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_Member_UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_Order_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ECommerceEntities.FK_OrderDetail_Product" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -13,15 +13,15 @@
 
     <input type="hidden" name="ProductID" value="@Model.Product.ProductID" />
     @* name="Product.ProductID" şeklinde de kulalnabiliriz. ancak sadece product classını etkileyen durum oldugundna gerek yoktur. ancak daha komplike örneğin birden fazla classı etkileyen işlem yapmak istediğimizde kullanımı bu şeiklde olmalıdır. *@
-    <input type="hidden" name="Photo" value="@Model.Product.Photo"/>
+    <input type="hidden" name="Photo" value="@Model.Product.Photo" />
 
     <div class="form-group" style="width:300px">
         <label>Product Name</label>
         <input type="text" name="ProductName" class="form-control" value="@Model.Product.ProductName" />
     </div>
-    <div class="form-group" style="width:300px"  >
+    <div class="form-group" style="width:300px">
         <label>Price</label>
-        <input type="text" name="Price" class="form-control" value="@Model.Product.Price"/>
+        <input type="text" name="Price" class="form-control" value="@Model.Product.Price" />
     </div>
     <div class="form-group" style="width:300px">
         <label>Stock</label>
@@ -31,8 +31,7 @@
         <label> Category Name</label>
         <select class="form-control" name="CategoryId">
             <option value="@Model.Product.CategoryID"> @Model.Product.Category.CategoryName </option>
-            @foreach (Category item in Model.CatList)
-            {
+            @foreach (Category item in Model.CatList) {
                 <option value="@item.CategoryID"> @item.CategoryName </option>
             }
         </select>
@@ -42,17 +41,32 @@
         <label>Brand Name</label>
         <select class="form-control" name="BrandId">
             <option value="@Model.Product.BrandID"> @Model.Product.Brand.BrandName </option>
-            @foreach (Brand item in Model.BrandList)
-            {
+            @foreach (Brand item in Model.BrandList) {
                 <option value="@item.BrandID"> @item.BrandName </option>
             }
         </select>
     </div>
 
     <div class="form-group" style="width:300px">
-        <label>Product Photo</label>
+        <label>Product Base Photo</label>
         <img src="~/Images/@Model.Product.Photo" width="75" height="75" />
         <input type="file" name="Photo" />
+        <div class="text-danger">
+            @TempData["PhotoExtensionError"]
+        </div>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Product Photo2</label>
+        <img src="~/Images/@Model.Product.Photo2" width="75" height="75" />
+        <input type="file" name="Photo2" />
+        <div class="text-danger">
+            @TempData["PhotoExtensionError"]
+        </div>
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Product Photo3</label>
+        <img src="~/Images/@Model.Product.Photo3" width="75" height="75" />
+        <input type="file" name="Photo3" />
         <div class="text-danger">
             @TempData["PhotoExtensionError"]
         </div>

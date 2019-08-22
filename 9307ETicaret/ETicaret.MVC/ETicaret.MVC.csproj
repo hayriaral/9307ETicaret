@@ -428,6 +428,7 @@
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\UserDetail.cshtml" />
+    <Content Include="Views\User\ShoppingDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -441,13 +442,13 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\9307ETicaret\9307ETicaret\ETicaret.Entity\ETicaret.Entity.csproj">
+      <Project>{e2f30517-38e2-492e-86c9-113f7e05bdc2}</Project>
+      <Name>ETicaret.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ETicaret.Common\ETicaret.Common.csproj">
       <Project>{e3fbe3d0-694a-486f-b435-8c0e1c7665c0}</Project>
       <Name>ETicaret.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ETicaret.Entity\ETicaret.Entity.csproj">
-      <Project>{e2f30517-38e2-492e-86c9-113f7e05bdc2}</Project>
-      <Name>ETicaret.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETicaret.Repository\ETicaret.Repository.csproj">
       <Project>{197da5af-2c91-4364-8022-92cb09820aad}</Project>

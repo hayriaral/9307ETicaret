@@ -33,6 +33,8 @@ namespace ETicaret.Repository {
             newProduct.Stock = item.Stock;
             newProduct.Price = item.Price;
             newProduct.Photo = item.Photo;
+            newProduct.Photo2 = item.Photo2;
+            newProduct.Photo3 = item.Photo3;
             newProduct.CategoryID = item.CategoryID;
             newProduct.BrandID = item.BrandID;
 
@@ -54,6 +56,8 @@ namespace ETicaret.Repository {
             guncellenecek.Price = item.Price;
             guncellenecek.Stock = item.Stock;
             guncellenecek.Photo = item.Photo;
+            guncellenecek.Photo2 = item.Photo2;
+            guncellenecek.Photo3 = item.Photo3;
 
             return result.GetResult(db);
         }

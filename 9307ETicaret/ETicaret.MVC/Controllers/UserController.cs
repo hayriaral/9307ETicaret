@@ -11,6 +11,8 @@ namespace ETicaret.MVC.Controllers {
     public class UserController : Controller {
         MemberRepository mr = new MemberRepository();
         UserInstanceResult<Member> result = new UserInstanceResult<Member>();
+
+        OrderDetailRepository odr = new OrderDetailRepository();
         // GET: User
         [HttpGet]
         public ActionResult SignUp(string mesajUye, string mesajPassword) {
@@ -102,6 +104,13 @@ namespace ETicaret.MVC.Controllers {
             result.ResultInt = mr.Delete(currentUser.UserID);
             Session["Member"] = null;
             return RedirectToAction("Index", "Home", new { @deleteMesaj = "Kullanıcı silindi." });
+        }
+
+        [HttpGet]
+        public ActionResult ShoppingDetail() {
+            Member currentUser = (Member)Session["Member"];
+
+            return View();
         }
     }
 }

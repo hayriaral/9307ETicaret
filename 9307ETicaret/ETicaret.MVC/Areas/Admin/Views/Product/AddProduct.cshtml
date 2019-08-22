@@ -26,8 +26,7 @@
         <label> Category Name</label>
         <select class="form-control" name="CategoryId">
             <option>Select a proper Category</option>
-            @foreach (Category item in Model.CatList)
-            {
+            @foreach (Category item in Model.CatList) {
                 <option value="@item.CategoryID"> @item.CategoryName </option>
             }
         </select>
@@ -37,17 +36,25 @@
         <label>Brand Name</label>
         <select class="form-control" name="BrandId">
             <option>Select a proper Brand</option>
-                @foreach (Brand item in Model.BrandList)
-                {
-                    <option value="@item.BrandID"> @item.BrandName </option>
-                }
+            @foreach (Brand item in Model.BrandList) {
+                <option value="@item.BrandID"> @item.BrandName </option>
+            }
         </select>
     </div>
 
     <div class="form-group" style="width:300px">
-        <label>Product Photo</label>
+        <label>Product Base Photo</label>
         <input type="file" name="Photo" />
     </div>
+    <div class="form-group" style="width:300px">
+        <label>Product Photo2</label>
+        <input type="file" name="Photo2" />
+    </div>
+    <div class="form-group" style="width:300px">
+        <label>Product Photo3</label>
+        <input type="file" name="Photo3" />
+    </div>
+
     <div class="form-group" style="width:300px">
         <button class="btn btn-success" type="submit"> Add Product </button>
     </div>
