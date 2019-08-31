@@ -59,8 +59,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\9307ETicaret\9307ETicaret\ETicaret.Entity\ETicaret.Entity.csproj">
-      <Project>{e2f30517-38e2-492e-86c9-113f7e05bdc2}</Project>
+    <ProjectReference Include="..\ETicaret.Entity\ETicaret.Entity.csproj">
+      <Project>{8a1f6534-18e1-40ff-8393-646f7a2e1f7d}</Project>
       <Name>ETicaret.Entity</Name>
     </ProjectReference>
   </ItemGroup>
