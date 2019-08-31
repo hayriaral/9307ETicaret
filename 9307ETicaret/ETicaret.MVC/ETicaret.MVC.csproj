@@ -280,6 +280,8 @@
     <Content Include="MyScripts\color.css" />
     <Content Include="MyScripts\ErrorMessages.js" />
     <Content Include="MyScripts\main.js" />
+    <Content Include="MyScripts\script.js" />
+    <Content Include="MyScripts\styleforpw.css" />
     <Content Include="obj\Debug\ETicaret.MVC.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ETicaret.MVC.dll" />
     <Content Include="obj\Debug\ETicaret.MVC.pdb" />
@@ -429,6 +431,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\UserDetail.cshtml" />
     <Content Include="Views\User\ShoppingDetail.cshtml" />
+    <Content Include="Views\Payment\OrderSum.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

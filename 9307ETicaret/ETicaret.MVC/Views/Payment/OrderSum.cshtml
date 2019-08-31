@@ -1,0 +1,49 @@
+﻿@using ETicaret.Entity
+@model ICollection<OrderDetail>
+
+@{Member currentUser = (Member)Session["Member"];}
+@{Order currentOrder = (Order)Session["OrderSum"];}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>OrderSum</title>
+</head>
+<body>
+    <div class="container" style="margin-top:10px">
+        <div class="text-success">
+            @ViewBag.paymentMesaj
+        </div>
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th>Kullanıcı</th>
+                    <th>Ürün</th>
+                    <th>Adet</th>
+                    <th>Ödenen Tutar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (OrderDetail item in Model) {
+                    <tr>
+                        <th>@currentUser.Email</th>
+                        <th>@item.Product.ProductName</th>
+                        <th>@item.Quantitiy</th>
+                        <th>@item.Price</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <span class="text text-info">Toplam Ödenen Tutar:</span> <label class="text text-info">@currentOrder.TotalPrice</label>
+        <br />
+        <a href="~/Home/Index" class="btn btn-info">Home Page</a>
+    </div>
+</body>
+</html>

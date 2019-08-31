@@ -16,14 +16,14 @@
             </a>
         </div>
         <div class="product_img">
-            @if (Model.Photo2 != null) {
+            @if (Model.Photo2 != null && Model.Photo2 !="") {
                 <a href="javascript:popImage('~/Images/@Model.Photo2','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]">
                     <img src="~/Images/@Model.Photo2" alt="" border="0" width="100" height="100" />
                 </a>
             }
         </div>
         <div class="product_img">
-            @if (Model.Photo3 != null) {
+            @if (Model.Photo3 != null && Model.Photo3!="") {
                 <a href="javascript:popImage('~/Images/@Model.Photo3','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]">
                     <img src="~/Images/@Model.Photo3" alt="" border="0" width="100" height="100" />
                 </a>

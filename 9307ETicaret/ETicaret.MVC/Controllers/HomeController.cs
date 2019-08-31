@@ -15,6 +15,7 @@ namespace ETicaret.MVC.Controllers
 
         public ActionResult Index(string paymentMesaj, string yeniUyeMesaj, string cikisMesaj, string UyeBilgileriUpdate, string deleteMesaj) //anasayfa
         {
+            Session["OrderSum"] = null;
             ViewBag.payment = paymentMesaj;
             ViewBag.yeniUye = yeniUyeMesaj;
             ViewBag.cikisMesaj = cikisMesaj;

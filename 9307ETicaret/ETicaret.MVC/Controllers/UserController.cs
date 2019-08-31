@@ -108,9 +108,11 @@ namespace ETicaret.MVC.Controllers {
 
         [HttpGet]
         public ActionResult ShoppingDetail() {
-            Member currentUser = (Member)Session["Member"];
+            OrderDetailRepository ordrep = new OrderDetailRepository();
 
-            return View();
+            ICollection<OrderDetail> OrderDetailList = ordrep.GetLatestObjects(3).ProcessResult;
+
+            return View(OrderDetailList);
         }
     }
 }

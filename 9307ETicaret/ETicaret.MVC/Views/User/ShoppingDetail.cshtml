@@ -13,6 +13,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <title>ShoppingDetail</title>
 </head>
 <body>
@@ -27,9 +28,10 @@
                 </tr>
             </thead>
             <tbody>
+                @{Member currentUser = (Member)Session["Member"];}
                 @foreach (OrderDetail item in Model) {
 
-                    if (item.Order.isPay == true /*&& (currentUser.UserID == item.Order.Member.UserID)*/) {
+                    if (item.Order.isPay == true && (currentUser.UserID == item.Order.Member.UserID)) {
                         <tr>
                             <th>@item.Product.ProductName</th>
                             <th>@item.Quantitiy</th>

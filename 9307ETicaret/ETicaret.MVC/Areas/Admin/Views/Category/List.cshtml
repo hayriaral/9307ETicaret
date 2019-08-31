@@ -13,6 +13,7 @@
 <table class="table table-condensed table-hover">
     <thead>
         <tr>
+            <th>Category ID</th>
             <th>Category Name</th>
             <th>Description</th>
             <th>Crated Date</th>
@@ -24,6 +25,7 @@
         @foreach (Category item in Model)
         {
             <tr>
+                <td>@item.CategoryID</td>
                 <td>@item.CategoryName</td>
                 <td>@item.Description</td>
                 <td>@item.CreatedDate</td>

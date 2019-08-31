@@ -62,5 +62,12 @@ namespace ETicaret.Repository {
             return result.GetResult(db);
         }
 
+        public void StockAzalt(Order o) {
+            foreach (OrderDetail item in o.OrderDetails) {
+
+                item.Product.Stock = item.Product.Stock - item.Quantitiy;
+                Update(item.Product);
+            }
+        }
     }
 }

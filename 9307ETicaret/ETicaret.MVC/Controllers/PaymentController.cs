@@ -39,10 +39,14 @@ namespace ETicaret.MVC.Controllers
                 OrderRepository or = new OrderRepository();
                 sepetim.isPay = true;
                 or.Update(sepetim);
+
+                Session["OrderSum"] = Session["Order"];
+
                 Session["Order"] = null;
                 var sepet = Session["Order"];
 
-                return RedirectToAction("Index", "Home", new { @paymentMesaj = "Ödeme başarılı" });
+                //return RedirectToAction("Index", "Home", new { @paymentMesaj = "Ödeme başarılı" });
+                return RedirectToAction("OrderSum", new { @paymentMesaj = "Ödeme başarılı" });
             }
             else
             {
@@ -51,5 +55,15 @@ namespace ETicaret.MVC.Controllers
                 return RedirectToAction("Pay");
             }
         }
+        public ActionResult OrderSum(string paymentMesaj) {
+            ViewBag.paymentMesaj = paymentMesaj;
+            Order sepettekiler = (Order)Session["OrderSum"];
+            ProductRepository pr = new ProductRepository();
+
+            pr.StockAzalt(sepettekiler);
+
+            return View(sepettekiler.OrderDetails);
+        }
+
     }
 }

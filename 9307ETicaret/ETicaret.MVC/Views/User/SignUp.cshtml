@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>Üye Ol</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.7.min.js"></script>
+    <link href="~/MyScripts/styleforpw.css" rel="stylesheet" />
+    <script src="~/MyScripts/script.js"></script>
 </head>
 <body>
     <div class="container" style="margin-top:100px">
@@ -21,7 +24,7 @@
             <div class="text-danger">
                 @ViewBag.mesajUye
             </div>
-            <form action="~/User/SignUp" id="js-add-member-form" method="post">
+            <form action="~/User/SignUp" method="post">
                 <div class="form-group" style="width:300px">
                     <label>FirstName</label>
                     <input type="text" name="FirstName" class="form-control" placeholder="First name" />
@@ -48,7 +51,7 @@
 
                 <div class="form-group" style="width:300px">
                     <label>Password</label>
-                    <input type="password" name="Password" id="js-input-password" class="form-control" />
+                    <input type="password" name="Password" id="pswd" class="form-control" />
                 </div>
 
                 <div class="form-group" style="width:300px">
@@ -58,6 +61,14 @@
 
                 <button class="btn btn-primary" type="submit"> Add User </button>
             </form>
+            <div id="pswd_info">
+                <h4>Password must meet the following requirements:</h4>
+                <ul>
+                    <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                    <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                    <li id="length" class="invalid">Between <strong>8-16 characters</strong></li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

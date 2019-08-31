@@ -8,7 +8,7 @@ using ETicaret.Common;
 
 namespace ETicaret.Repository
 {
-    public class OrderDetailRepository : DataRepository<OrderDetail, int>, DeleteObjectByDoubleID<int>, GetObjectByTwoID<OrderDetail>
+    public class OrderDetailRepository : DataRepository<OrderDetail, int>, DeleteObjectByDoubleID<int>, GetObjectByTwoID<OrderDetail>, GetLatestObject<OrderDetail>
         //buradaki int OrderID'yi temsil ediyor.
     {
         public static ECommerceEntities db = Tool.GetConnection();
@@ -27,6 +27,10 @@ namespace ETicaret.Repository
             OrderDetail ord = db.OrderDetails.SingleOrDefault(t => t.OrderID == id1 && t.ProductID == id2);
             db.OrderDetails.Remove(ord);
             return result.GetResult(db);
+        }
+
+        public Result<List<OrderDetail>> GetLatestObjects(int Quantity) {
+            return result.GetListResult(db.OrderDetails.OrderByDescending(t => t.Order.OrderDate).Take(Quantity).ToList());
         }
 
         public override Result<OrderDetail> GetObjByID(int id)
